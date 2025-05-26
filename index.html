@@ -2,240 +2,277 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sudeepbogati.com.np</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Sudip Bogati - Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'sky': {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        'emerald': {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-
-<!-- Nav Bar -->
-
-<!-- End Nav Bar -->
-
+<body class="bg-white min-h-screen overflow-x-hidden font-body">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-0">
+        <!-- Geometric shapes -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-sky-100 rounded-full opacity-60 animate-float"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-emerald-100 rounded-lg rotate-45 opacity-50 animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-40 left-20 w-12 h-12 bg-sky-200 rounded-full opacity-70 animate-float" style="animation-delay: 4s;"></div>
+        <div class="absolute bottom-20 right-40 w-24 h-24 bg-emerald-50 rounded-lg rotate-12 opacity-40 animate-float" style="animation-delay: 1s;"></div>
+        
+        <!-- Wave background -->
+        <svg class="absolute bottom-0 left-0 w-full h-64" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#f0f9ff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        
+        <!-- Subtle grid pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="w-full h-full" style="background-image: radial-gradient(circle, #0ea5e9 1px, transparent 1px); background-size: 50px 50px;"></div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
-    
-    <section id="hero">
-        <div class="hero container">
-            <div>
-                <h1>Hello, <span></span></h1>
-                <h1>My name is <span></span></h1>
-                <h1>SUDEEP <span></span></h1>
-                <a href="#" type="button" class="hero-button">Resume</a>
-            </div>
-        </div>
-    </section>
-
-    <!--  End Hero Section -->
-
-    <!-- Service Section -->
-
-    <section id="services">
-        <div class="services container">
-            <div class="service-top">
-                <h1 class="service-title"> Serv<span>i</span>ces</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam quibusdam voluptatibus adipisci tenetur pariatur quod incidunt, illo harum optio quam sed animi ullam officiis quos nemo dolor. Ab officia tempore voluptate quisquam magnam doloribus provident expedita maxime, vero libero doloremque cumque. Dolore dolores tempore illo voluptatibus optio nesciunt obcaecati officia!
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt beatae ducimus laborum, vel praesentium sed. Nesciunt tenetur quas ab laudantium, iusto quis optio repellendus neque animi in ipsam <sunt class="lorem20"></sunt>
-                </p>
-                
-            </div>
-            <div class="service-bottom">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <img src="./img/icon3.png" alt="">
+    <section class="relative z-10 min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left animate-fade-in">
+                    <!-- Profile Picture -->
+                    <div class="mb-8 lg:hidden">
+                        <div class="relative inline-block">
+                            <img src="./images/profile.jpg" alt="Sudip Bogati" 
+                                 class="rounded-full mx-auto border-4 border-white shadow-2xl">
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/10 to-emerald-500/10"></div>
+                            <!-- Status indicator -->
+                            <div class="absolute bottom-2 right-2 w-6 h-6 bg-emerald-500 rounded-full border-4 border-white"></div>
+                        </div>
                     </div>
-                    <h2>Web Design</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, iste beatae saepe quisquam ut delectus? Officiis velit quasi dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?</p>
+
+                    <!-- Name and Title -->
+                    <div class="mb-8">
+                        <h1 class="font-heading text-5xl lg:text-6xl font-bold mb-4 text-gray-900 leading-tight">
+                            Sudeep <span class="text-sky-600">Bogati</span>
+                        </h1>
+                        <div class="flex items-center justify-center lg:justify-start mb-4">
+                            <div class="w-12 h-0.5 bg-emerald-500 mr-4"></div>
+                            <h2 class="font-heading text-xl lg:text-2xl text-gray-600 font-semibold">
+                                Software Engineer
+                            </h2>
+                            <div class="w-12 h-0.5 bg-emerald-500 ml-4"></div>
+                        </div>
+                        <p class="font-body text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            Passionate Software Engineer with <span class="font-semibold text-sky-600">1+ years</span> of experience 
+                            crafting innovative digital solutions and building scalable web applications.
+                        </p>
+                    </div>
+
+                    <!-- Key Skills -->
+                    <div class="mb-8">
+                        <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+                            <span class="font-body bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200">
+                                Javascript
+                            </span>
+                            <span class="font-body bg-sky-50 text-sky-700 px-4 py-2 rounded-full text-sm font-medium border border-sky-200">
+                                Python
+                            </span>
+                            <span class="font-body bg-red-50 text-red-700 px-4 py-2 rounded-full text-sm font-medium border border-red-200">
+                                AI
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://sudipbogati.com.np" target="_blank" 
+                           class="group font-body bg-sky-600 hover:bg-sky-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                            www.sudipbogati.com.np
+                        </a>
+                        <a href="mailto:hello@sudipbogati.com.np" 
+                           class="group font-body border-2 border-emerald-600 hover:bg-emerald-600 hover:text-white text-emerald-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Contact Me
+                        </a>
+                    </div>
                 </div>
-                    
-            </div>
-                    <div class="service-bottom">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <img src="./img/icon3.png" alt="">
+
+                <!-- Right Illustration -->
+                <div class="hidden lg:block animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="relative">
+                        <!-- Profile Picture for desktop -->
+                        <div class="absolute top-8 right-8 z-20 animate-float">
+                            <div class="relative">
+                                <img src="./images/profile.jpg" alt="Sudip Bogati" 
+                                     class="w-48 h-48 rounded-full border-4 border-white shadow-2xl">
+                                <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/10 to-emerald-500/10"></div>
+                                <!-- Status indicator -->
+                                <div class="absolute bottom-4 right-4 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white animate-pulse"></div>
                             </div>
-                                <h2>Graphic Design</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, iste beatae saepe quisquam ut delectus? Officiis velit quasi dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam? </p>
                         </div>
-                    </div>
-                    <div class="service-bottom">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <img src="./img/icon3.png" alt="">
+
+                        <!-- Code illustration -->
+                        <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 animate-float">
+                            <div class="space-y-4">
+                                <!-- Code editor header -->
+                                <div class="flex items-center space-x-2 mb-6">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-emerald-400 rounded-full"></div>
+                                    <div class="ml-4 text-sm text-gray-500 font-mono">portfolio.js</div>
+                                </div>
+                                
+                                <!-- Code lines -->
+                                <div class="space-y-3 font-mono text-sm">
+                                    <div class="flex">
+                                        <span class="text-gray-400 w-8">1</span>
+                                        <span class="text-sky-600">const</span>
+                                        <span class="text-gray-800 ml-2">developer = {</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-400 w-8">2</span>
+                                        <span class="text-emerald-600 ml-4">name:</span>
+                                        <span class="text-sky-600 ml-2">'Sudip Bogati',</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-400 w-8">3</span>
+                                        <span class="text-emerald-600 ml-4">role:</span>
+                                        <span class="text-sky-600 ml-2">'Software Engineer',</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-400 w-8">4</span>
+                                        <span class="text-emerald-600 ml-4">experience:</span>
+                                        <span class="text-orange-600 ml-2">'1+ years',</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-400 w-8">5</span>
+                                        <span class="text-emerald-600 ml-4">passion:</span>
+                                        <span class="text-sky-600 ml-2">'Building solutions'</span>
+                                    </div>
+                                    <div class="flex">
+                                        <span class="text-gray-400 w-8">6</span>
+                                        <span class="text-gray-800">};</span>
+                                    </div>
+                                </div>
                             </div>
-                                <h2>Thumbnail Design</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, iste beatae saepe quisquam ut delectus? Officiis velit quasi dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?</p>
                         </div>
-                    </div>
-                <div class="service-bottom">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <img src="./img/icon3.png" alt="">
-                        </div>
-                            <h2>Web Development</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, iste beatae saepe quisquam ut delectus? Officiis velit quasi dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque repellendus a ut iusto asperiores quas accusantium harum reiciendis alias qui!dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?dicta reprehenderit dolorem sapiente. Labore deserunt quae assumenda? Fugiat officia saepe consequuntur assumenda. Voluptatum perspiciatis consectetur reprehenderit rem hic omnis maxime incidunt debitis, laudantium aliquidquibusdam?</p>
-                    </div>
-            </div>
-                  
-                
-        </div>
-        
-    </section>
-    <!-- End Service Section -->
 
-    <!-- My Projects -->
-    <section id="projects">
-        <div class="projects container">
-            <div class="project-header">
-                <h1 class="service-title">Recent <span>Projects</span></h1>
+                        <!-- Floating tech icons -->
+                        <div class="absolute -top-4 -left-4 bg-sky-500 text-white p-3 rounded-lg shadow-lg animate-float" style="animation-delay: 1s;">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -right-4 bg-emerald-500 text-white p-3 rounded-lg shadow-lg animate-float" style="animation-delay: 2s;">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="all-projects">
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Project 1</h1>
-                        <h2>Coding is in my blood</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo numquam aperiam debitis ullam in iure? Sint, in natus unde maiores dolorum quam sapiente, non atque mollitia architecto eius asperiores quibusdam vitae ducimus magnam voluptatem dignissimos amet quas consequatur voluptates illo blanditiis doloremque reprehenderit. Beatae, repellendus rerum? Temporibus odio et quasi.</p>
-                    </div>
-                    <div class="project-img">
-                        <img src="./img/bg4.jpg" alt="img">
-                    </div>
+
+            <!-- Stats Section -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in" style="animation-delay: 0.6s;">
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-bold text-sky-600 mb-2">1+</div>
+                    <div class="font-body text-gray-600 text-sm">Years Experience</div>
                 </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Project 2</h1>
-                        <h2>Coding is in my blood</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo numquam aperiam debitis ullam in iure? Sint, in natus unde maiores dolorum quam sapiente, non atque mollitia architecto eius asperiores quibusdam vitae ducimus magnam voluptatem dignissimos amet quas consequatur voluptates illo blanditiis doloremque reprehenderit. Beatae, repellendus rerum? Temporibus odio et quasi.</p>
-                    </div>
-                    <div class="project-img">
-                        <img src="./img/bg4.jpg" alt="">
-                    </div>
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-bold text-emerald-600 mb-2">10+</div>
+                    <div class="font-body text-gray-600 text-sm">Projects Built</div>
                 </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Project 3</h1>
-                        <h2>Coding is in my blood</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo numquam aperiam debitis ullam in iure? Sint, in natus unde maiores dolorum quam sapiente, non atque mollitia architecto eius asperiores quibusdam vitae ducimus magnam voluptatem dignissimos amet quas consequatur voluptates illo blanditiis doloremque reprehenderit. Beatae, repellendus rerum? Temporibus odio et quasi.</p>
-                    </div>
-                    <div class="project-img">
-                        <img src="./img/bg4.jpg" alt="">
-                    </div>
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-bold text-sky-600 mb-2">15+</div>
+                    <div class="font-body text-gray-600 text-sm">Technologies</div>
                 </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Project 4</h1>
-                        <h2>Coding is in my blood</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo numquam aperiam debitis ullam in iure? Sint, in natus unde maiores dolorum quam sapiente, non atque mollitia architecto eius asperiores quibusdam vitae ducimus magnam voluptatem dignissimos amet quas consequatur voluptates illo blanditiis doloremque reprehenderit. Beatae, repellendus rerum? Temporibus odio et quasi.</p>
-                    </div>
-                    <div class="project-img">
-                        <img src="./img/bg4.jpg" alt="img">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Project 5</h1>
-                        <h2>Coding is in my blood</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo numquam aperiam debitis ullam in iure? Sint, in natus unde maiores dolorum quam sapiente, non atque mollitia architecto eius asperiores quibusdam vitae ducimus magnam voluptatem dignissimos amet quas consequatur voluptates illo blanditiis doloremque reprehenderit. Beatae, repellendus rerum? Temporibus odio et quasi.</p>
-                    </div>
-                    <div class="project-img">
-                        <img src="./img/bg4.jpg" alt="img">
-                    </div>
+                <div class="text-center">
+                    <div class="font-heading text-3xl font-bold text-emerald-600 mb-2">24/7</div>
+                    <div class="font-body text-gray-600 text-sm">Learning Mode</div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End My Projects -->
 
-<!-- About Me Section -->
-<section id="about">
-    <div class="about container">
-        <div class="col-left">
-            <div class="about-img">
-                <img src="./img/img4.jpg" alt="img">
-            </div>
-        </div>
-        <div class="col-right">
-            <h1 class="service-title">About <span>Me</span></h1>
-            <h2>Front-End Developer</h2>
-            <p>Hello, my name is Sudeep Bogati. I am from Khairahani-12, Chitwan ,Nepal but currently i'm living in Kirtipur, Kathmandu for higher studies. I have successfullly completed my +2 on the facaulty of Computer Sciencce with GPA 3.88 . I'm here in this front-end web development field for 3 months of working. I had designed nearly 10 websites during this period. </p>
-            <a href="#" type="button" class="hero-button"> Download Resume</a>
-        </div>
+    <script>
+        // Add smooth entrance animations
+        window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
 
-    </div>
-</section>
-<!--End About Me Section -->
-
-
-<!-- Contact Section-->
-<section id="contact">
-    <div class="contact container">
-        <div>
-            <h1 class="service-title"> Contact <span>Info</span></h1>
-        </div>
-        <div class="contact-items">
-            <div class="contact-item">
-                <div class="contact-img">
-                    <img src="./img/phone.png" alt="">
-                </div>
-                <div class="contact-info">
-                    <h1>Phone</h1>
-                    <h2>9865518341</h2>
-                    <h2>01-12345678</h2>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-img">
-                    <img src="./img/email.png" alt="">
-                </div>
-                <div class="contact-info">
-                    <h1>E-mail</h1>
-                    <h2>sudeepbogati977@gmail.com</h2>
-                    <h2>sudeepbogati2078@gmail.com</h2>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-img">
-                    <img src="./img/address.png" alt="">
-                </div>
-                <div class="contact-info">
-                    <h1>Address</h1>
-                    <h2>Kirtipur-12, Kathmandu</h2>
-                    <h2>Nepal</h2>
-                </div>
-            </div>
+        // Add hover effects to floating elements
+        document.querySelectorAll('.animate-float').forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+                this.style.transform = 'translateY(-25px) scale(1.05)';
+            });
             
-        </div>
-    </div>
-
-</section>
-<!--End Contact Section-->
-<!-- Footer -->
-<section id="footer">
-    <div class="footer container1">
-        <div class="brand"> 
-            <h1> <span>S</span>udeep <span>B</span>ogati</h1>
-        </div>
-        <div class="sub-brand">
-            <h2>Front-End Web Develpment Perfectionist</h2>
-        </div>
-        <div class="social-icons">
-            <a href="http://www.facebook.com/search/sudeep bogati" target="_blank"><img src="./img/facebook.png" alt=""></a>
-            <a href="http://www.instagram.com" target="_blank"><img src="./img/instagram.png" alt=""></a>
-            <a href="http://www.twitter.com" target="_blank"><img src="./img/twitter.png" alt=""></a>
-            <a href="http://www.line.com" target="_blank"><img src="./img/line.png" alt=""></a>
-            <a href="http://www.linkedin.com" target="_blank"><img src="./img/linkedin.png" alt=""></a>
-        </div>
-        <p>Copyright © 2022 Sudeep. All right reserved</p>
-
-    </div>
-</section>
-<!--End Footer -->
-
-
-    <script src="app.js"></script>
+            el.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+                this.style.transform = '';
+            });
+        });
+    </script>
 </body>
 </html>
