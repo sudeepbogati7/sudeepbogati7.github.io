@@ -1,685 +1,678 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sudip Bogati - Software Engineer</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            heading: ["Poppins", "sans-serif"],
-                            body: ["Inter", "sans-serif"],
-                        },
-                        colors: {
-                            sky: {
-                                50: "#f0f9ff",
-                                100: "#e0f2fe",
-                                200: "#bae6fd",
-                                300: "#7dd3fc",
-                                400: "#38bdf8",
-                                500: "#0ea5e9",
-                                600: "#0284c7",
-                                700: "#0369a1",
-                                800: "#075985",
-                                900: "#0c4a6e",
-                            },
-                            emerald: {
-                                50: "#ecfdf5",
-                                100: "#d1fae5",
-                                200: "#a7f3d0",
-                                300: "#6ee7b7",
-                                400: "#34d399",
-                                500: "#10b981",
-                                600: "#059669",
-                                700: "#047857",
-                                800: "#065f46",
-                                900: "#064e3b",
-                            },
-                        },
-                        animation: {
-                            float: "float 6s ease-in-out infinite",
-                            "fade-in": "fadeIn 1s ease-in-out",
-                            "pulse-skeleton": "pulse 1.5s ease-in-out infinite",
-                        },
-                        keyframes: {
-                            float: {
-                                "0%, 100%": { transform: "translateY(0px)" },
-                                "50%": { transform: "translateY(-20px)" },
-                            },
-                            fadeIn: {
-                                "0%": {
-                                    opacity: "0",
-                                    transform: "translateY(30px)",
-                                },
-                                "100%": {
-                                    opacity: "1",
-                                    transform: "translateY(0)",
-                                },
-                            },
-                            pulse: {
-                                "0%, 100%": { opacity: "1" },
-                                "50%": { opacity: "0.5" },
-                            },
-                        },
-                    },
-                },
-            };
-        </script>
-        <style>
-            .skeleton {
-                background: linear-gradient(
-                    90deg,
-                    #f0f9ff 25%,
-                    #e0f2fe 50%,
-                    #f0f9ff 75%
-                );
-                background-size: 200% 100%;
-                animation: pulse-skeleton 1.5s ease-in-out infinite;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudeep@arch:~</title>
+    <meta name="description" content="Sudeep Bogati - Software Engineer | sudeep.is-a.dev">
+    <meta property="og:title" content="Sudeep Bogati - Software Engineer">
+    <meta property="og:description" content="Software Engineer with 3+ years of experience. TypeScript, Python, C#.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sudeep.is-a.dev">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>></text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <noscript><style>#boot{display:none!important}#waybar,#desktop{opacity:1!important}.tab-pane{display:block!important}</style></noscript>
+    <style>
+        :root {
+            --base: #1e1e2e; --mantle: #181825; --crust: #11111b;
+            --surface0: #313244; --surface1: #45475a; --surface2: #585b70;
+            --overlay0: #6c7086; --overlay1: #7f849c;
+            --subtext0: #a6adc8; --subtext1: #bac2de; --text: #cdd6f4;
+            --lavender: #b4befe; --blue: #89b4fa; --sapphire: #74c7ec;
+            --sky: #89dceb; --teal: #94e2d5; --green: #a6e3a1;
+            --yellow: #f9e2af; --peach: #fab387; --maroon: #eba0ac;
+            --red: #f38ba8; --mauve: #cba6f7; --pink: #f5c2e7;
+            --flamingo: #f2cdcd; --rosewater: #f5e0dc;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+            user-select: none;
+        }
+
+        /* ===== Wallpaper ===== */
+        #wallpaper {
+            position: fixed; inset: 0; z-index: 0;
+            background:
+                radial-gradient(ellipse at 15% 50%, rgba(137,180,250,0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 20%, rgba(203,166,247,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 90%, rgba(148,226,213,0.03) 0%, transparent 45%),
+                var(--crust);
+        }
+
+        /* ===== Boot ===== */
+        #boot {
+            position: fixed; inset: 0; background: #000; z-index: 10000;
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 2rem 3rem; font-size: 13px; line-height: 2;
+            transform-origin: center center;
+        }
+        .boot-line { opacity: 0; white-space: nowrap; }
+        .boot-ok { color: var(--green); font-weight: 600; }
+        .boot-text { color: var(--subtext0); }
+        .boot-user { color: var(--blue); }
+        .boot-prompt { color: var(--green); }
+        .cursor { display: inline-block; width: 8px; height: 15px; background: var(--green); animation: blink 1s step-end infinite; vertical-align: middle; margin-left: 2px; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* ===== Waybar ===== */
+        #waybar {
+            position: fixed; top: 4px; left: 4px; right: 4px; height: 34px;
+            background: rgba(24,24,37,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--surface0); border-radius: 10px;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 14px; font-size: 11px; z-index: 100; opacity: 0;
+        }
+        .wb-left, .wb-right { display: flex; align-items: center; gap: 4px; }
+        .wb-center { color: var(--subtext0); display: flex; align-items: center; gap: 6px; }
+        .wb-center-icon { color: var(--blue); }
+        .wb-arch { color: var(--blue); font-weight: 700; font-size: 13px; margin-right: 8px; }
+        .wp { padding: 2px 9px; border-radius: 6px; color: var(--overlay0); font-size: 10px; transition: all 0.2s; cursor: default; }
+        .wp.active { background: var(--blue); color: var(--crust); font-weight: 600; }
+        .wp.occupied { color: var(--subtext0); }
+        .wb-sep { color: var(--surface1); margin: 0 6px; font-size: 8px; }
+        .wb-mod { color: var(--subtext0); }
+        .wb-mod-val { color: var(--text); }
+        .wb-clock { display: flex; gap: 10px; color: var(--text); }
+        .wb-power { background: none; border: none; color: var(--overlay0); font-size: 14px; cursor: pointer; padding: 2px 4px; border-radius: 4px; transition: all 0.2s; font-family: inherit; }
+        .wb-power:hover { color: var(--red); background: rgba(243,139,168,0.1); }
+
+        /* ===== Desktop ===== */
+        #desktop {
+            position: fixed; inset: 0;
+            z-index: 10; opacity: 0;
+        }
+
+        /* ===== Hyprland Floating Window ===== */
+        .hypr-win {
+            position: fixed;
+            background: rgba(30,30,46,0.88);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 2px solid var(--surface0);
+            border-radius: 12px;
+            display: flex; flex-direction: column;
+            overflow: hidden;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            cursor: default;
+            resize: both;
+            min-width: 260px; min-height: 120px;
+        }
+        .hypr-win.focused {
+            border-color: var(--blue);
+            box-shadow: 0 0 20px rgba(137,180,250,0.06);
+        }
+        .hypr-win:not(.focused):hover {
+            border-color: var(--surface1);
+        }
+        .hypr-win .win-tabs { cursor: grab; }
+        .hypr-win .win-tabs.dragging { cursor: grabbing; }
+        .hypr-win::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 12px; height: 12px;
+            border-right: 2px solid var(--surface2);
+            border-bottom: 2px solid var(--surface2);
+            border-radius: 0 0 6px 0;
+            pointer-events: none; opacity: 0.4;
+        }
+
+        /* Default positions — content-sized, positioned via JS */
+        #win-term    { z-index: 52; width: 480px; }
+        #win-editor  { z-index: 51; width: 440px; }
+        #win-contact { z-index: 50; width: 380px; }
+
+        /* ===== Window Group Tabs ===== */
+        .win-tabs {
+            display: flex; gap: 1px;
+            background: rgba(17,17,27,0.6);
+            padding: 3px 3px 0;
+            flex-shrink: 0;
+        }
+        .tab {
+            padding: 4px 14px;
+            font-size: 10px;
+            color: var(--overlay0);
+            border-radius: 7px 7px 0 0;
+            cursor: pointer;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+        .tab:hover { color: var(--subtext1); }
+        .tab.active {
+            background: rgba(30,30,46,0.95);
+            color: var(--text);
+        }
+        .tab-close {
+            color: var(--overlay0);
+            margin-left: 6px;
+            font-size: 12px;
+            transition: color 0.15s;
+        }
+        .tab:hover .tab-close { color: var(--red); }
+
+        /* ===== Window Content ===== */
+        .win-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px 14px;
+            position: relative;
+        }
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; }
+
+        .win-content::-webkit-scrollbar { width: 5px; }
+        .win-content::-webkit-scrollbar-track { background: transparent; }
+        .win-content::-webkit-scrollbar-thumb { background: var(--surface1); border-radius: 3px; }
+        .win-content::-webkit-scrollbar-thumb:hover { background: var(--surface2); }
+
+        /* ===== Prompt ===== */
+        .prompt { margin-bottom: 6px; }
+        .p-u { color: var(--blue); font-weight: 600; }
+        .p-at { color: var(--text); }
+        .p-h { color: var(--mauve); font-weight: 600; }
+        .p-d { color: var(--teal); }
+        .p-s { color: var(--green); font-weight: 700; }
+
+        /* ===== Neofetch ===== */
+        .nf-main {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+        .nf-photo {
+            width: 120px; height: 120px;
+            border-radius: 10px;
+            border: 2px solid var(--surface1);
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+        .nf-photo:hover {
+            border-color: var(--blue);
+            box-shadow: 0 0 16px rgba(137,180,250,0.15);
+        }
+        .nf-info { flex: 1; min-width: 0; font-size: 12px; line-height: 1.65; }
+        .nf-head { font-weight: 700; }
+        .nf-head .u { color: var(--blue); }
+        .nf-head .at { color: var(--text); }
+        .nf-head .h { color: var(--mauve); }
+        .nf-sep { color: var(--surface2); }
+        .nf-l { color: var(--blue); font-weight: 600; }
+
+        .nf-bottom { display: flex; gap: 16px; align-items: flex-end; }
+        .ascii {
+            color: var(--blue); font-size: 7px; line-height: 1.05;
+            flex-shrink: 0; opacity: 0.6;
+        }
+        .nf-colors { font-size: 10px; line-height: 1.15; letter-spacing: 1px; }
+
+        /* ===== Editor ===== */
+        .ed { font-size: 12px; line-height: 1.75; }
+        .ln { display: inline-block; width: 24px; text-align: right; color: var(--overlay0); margin-right: 12px; }
+        .kw { color: var(--mauve); }
+        .str { color: var(--green); }
+        .prop { color: var(--blue); }
+        .punc { color: var(--overlay1); }
+        .cmt { color: var(--overlay0); font-style: italic; }
+        .num { color: var(--peach); }
+
+        .vim-bar {
+            margin-top: 8px; padding: 3px 8px;
+            background: var(--surface0); border-radius: 4px;
+            font-size: 10px; display: flex; justify-content: space-between; color: var(--subtext0);
+        }
+        .vim-mode { color: var(--crust); background: var(--green); padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+
+        /* ===== Contact ===== */
+        .ct-line { margin: 6px 0; font-size: 12px; }
+        .ct-k { color: var(--yellow); }
+        .ct-v { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+        .ct-v:hover { color: var(--lavender); text-decoration: underline; }
+
+        .ct-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 10px; padding: 6px 14px;
+            background: rgba(137,180,250,0.08);
+            border: 1px solid rgba(137,180,250,0.2);
+            border-radius: 7px; color: var(--blue); text-decoration: none;
+            font-size: 11px; font-family: inherit; transition: all 0.3s;
+        }
+        .ct-btn:hover { background: rgba(137,180,250,0.14); border-color: var(--blue); }
+        .ct-btn svg { width: 14px; height: 14px; }
+
+        /* ===== Mako Notification ===== */
+        #notif {
+            position: fixed; top: 48px; right: 12px;
+            width: 260px;
+            background: rgba(30,30,46,0.92);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--surface0);
+            border-left: 3px solid var(--blue);
+            border-radius: 10px;
+            padding: 12px 14px;
+            z-index: 200; font-size: 11px;
+            opacity: 0; transform: translateX(20px);
+            cursor: pointer;
+        }
+        .notif-head { display: flex; justify-content: space-between; color: var(--overlay0); margin-bottom: 6px; font-size: 10px; }
+        .notif-title { color: var(--text); font-weight: 600; margin-bottom: 2px; }
+        .notif-body { color: var(--subtext0); line-height: 1.5; }
+        .notif-body a { color: var(--blue); text-decoration: none; }
+        .notif-body a:hover { text-decoration: underline; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            body { overflow-y: auto; height: auto; }
+            #desktop {
+                position: relative;
+                display: flex; flex-direction: column; gap: 6px;
+                padding: 42px 4px 4px;
             }
-
-            .content-hidden {
-                opacity: 0;
-                visibility: hidden;
+            .hypr-win {
+                position: relative !important;
+                top: auto !important; left: auto !important;
+                width: 100% !important; height: auto !important;
+                min-height: 260px; max-width: 100%; max-height: none;
+                resize: none; z-index: 10 !important;
             }
+            .hypr-win::after { display: none; }
+            .hypr-win .win-tabs { cursor: default; }
+            #win-term { min-height: 380px; }
+            #notif { display: none; }
+            .wb-center { display: none; }
+            .wb-mod { display: none; }
+            .nf-main { flex-direction: column; align-items: center; text-align: center; }
+            .nf-photo { width: 100px; height: 100px; }
+            .ascii { display: none; }
+            .nf-bottom { justify-content: center; }
+        }
 
-            .skeleton-container {
-                opacity: 1;
-                transition: opacity 0.5s ease-in-out;
-            }
+        @media (max-width: 480px) {
+            .wb-clock { gap: 6px; }
+            .win-content { padding: 10px; }
+        }
 
-            .skeleton-hidden {
-                opacity: 0;
-                visibility: hidden;
-            }
-        </style>
-    </head>
+        ::selection { background: var(--surface1); color: var(--text); }
+    </style>
+</head>
+<body>
+    <div id="wallpaper"></div>
 
-    <body class="bg-white min-h-screen overflow-x-hidden font-body">
-        <!-- Background Elements -->
-        <div class="fixed inset-0 z-0">
-            <!-- Geometric shapes -->
-            <div
-                class="absolute top-20 left-10 w-20 h-20 bg-sky-100 rounded-full opacity-60 animate-float"
-            ></div>
-            <div
-                class="absolute top-40 right-20 w-16 h-16 bg-emerald-100 rounded-lg rotate-45 opacity-50 animate-float"
-                style="animation-delay: 2s"
-            ></div>
-            <div
-                class="absolute bottom-40 left-20 w-12 h-12 bg-sky-200 rounded-full opacity-70 animate-float"
-                style="animation-delay: 4s"
-            ></div>
-            <div
-                class="absolute bottom-20 right-40 w-24 h-24 bg-emerald-50 rounded-lg rotate-12 opacity-40 animate-float"
-                style="animation-delay: 1s"
-            ></div>
+    <!-- Boot -->
+    <div id="boot">
+        <div class="boot-line"><span class="boot-ok">[  OK  ]</span> <span class="boot-text">Started sudeep.is-a.dev</span></div>
+        <div class="boot-line"><span class="boot-ok">[  OK  ]</span> <span class="boot-text">Loading kernel modules...</span></div>
+        <div class="boot-line"><span class="boot-ok">[  OK  ]</span> <span class="boot-text">Starting Hyprland on wayland-1...</span></div>
+        <div class="boot-line"><span class="boot-ok">[  OK  ]</span> <span class="boot-text">Loaded waybar status module</span></div>
+        <div class="boot-line"><span class="boot-ok">[  OK  ]</span> <span class="boot-text">Loading user configuration...</span></div>
+        <div class="boot-line" style="margin-top:8px"><span class="boot-user">sudeep@arch</span> <span class="boot-text">login: sudeep</span></div>
+        <div class="boot-line"><span class="boot-prompt">sudeep@arch ~ $</span> <span class="boot-text">Hyprland</span><span class="cursor"></span></div>
+    </div>
 
-            <!-- Wave background -->
-            <svg
-                class="absolute bottom-0 left-0 w-full h-64"
-                viewBox="0 0 1440 320"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    fill="#f0f9ff"
-                    fill-opacity="1"
-                    d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                ></path>
-            </svg>
+    <!-- Waybar -->
+    <header id="waybar">
+        <div class="wb-left">
+            <span class="wb-arch">arch</span>
+            <span class="wp active">1</span>
+            <span class="wp occupied">2</span>
+            <span class="wp">3</span>
+            <span class="wp">4</span>
+            <span class="wp">5</span>
+        </div>
+        <div class="wb-center">
+            <span class="wb-center-icon">&gt;_</span>
+            <span id="wb-title">kitty</span>
+        </div>
+        <div class="wb-right">
+            <span class="wb-mod"><span class="wb-mod-val">wlan0</span></span>
+            <span class="wb-sep">|</span>
+            <span class="wb-mod">vol <span class="wb-mod-val">72</span></span>
+            <span class="wb-sep">|</span>
+            <div class="wb-clock">
+                <span id="wb-time"></span>
+                <span id="wb-date"></span>
+            </div>
+            <span class="wb-sep">|</span>
+            <button class="wb-power">&#9211;</button>
+        </div>
+    </header>
 
-            <!-- Subtle grid pattern -->
-            <div class="absolute inset-0 opacity-5">
-                <div
-                    class="w-full h-full"
-                    style="
-                        background-image: radial-gradient(
-                            circle,
-                            #0ea5e9 1px,
-                            transparent 1px
-                        );
-                        background-size: 50px 50px;
-                    "
-                ></div>
+    <!-- Desktop -->
+    <div id="desktop">
+
+        <!-- ===== Terminal (master) ===== -->
+        <div class="hypr-win focused" id="win-term">
+            <div class="win-tabs">
+                <span class="tab active" data-target="pane-nf">neofetch<span class="tab-close">&times;</span></span>
+                <span class="tab" data-target="pane-zsh">zsh<span class="tab-close">&times;</span></span>
+            </div>
+            <div class="win-content">
+                <div class="tab-pane active" id="pane-nf">
+                    <div class="prompt">
+                        <span class="p-u">sudeep</span><span class="p-at">@</span><span class="p-h">arch</span> <span class="p-d">~</span> <span class="p-s">$</span> neofetch
+                    </div>
+                    <div class="nf-main">
+                        <img src="./images/avatar.jpeg" alt="Sudeep Bogati" class="nf-photo">
+                        <div class="nf-info">
+                            <div class="nf-head"><span class="u">sudeep</span><span class="at">@</span><span class="h">arch</span></div>
+                            <div class="nf-sep">-----------</div>
+                            <div><span class="nf-l">OS:</span> Arch Linux + Hyprland</div>
+                            <div><span class="nf-l">Role:</span> Software Engineer</div>
+                            <div><span class="nf-l">Host:</span> sudeep.is-a.dev</div>
+                            <div><span class="nf-l">Uptime:</span> 3+ years building</div>
+                            <div><span class="nf-l">Shell:</span> typescript / python / c#</div>
+                            <div><span class="nf-l">Packages:</span> 15+ technologies</div>
+                            <div><span class="nf-l">Projects:</span> 10+ deployed</div>
+                            <div><span class="nf-l">Status:</span> 24/7 learning mode</div>
+                        </div>
+                    </div>
+                    <div class="nf-bottom">
+                        <pre class="ascii">      /\
+     /  \
+    /\   \
+   /      \
+  /   ,,   \
+ /   |  |  -\
+/_-''    ''-_\</pre>
+                        <div>
+                            <div class="nf-colors"><span style="color:#45475a">&#9608;&#9608;&#9608;</span><span style="color:#f38ba8">&#9608;&#9608;&#9608;</span><span style="color:#a6e3a1">&#9608;&#9608;&#9608;</span><span style="color:#f9e2af">&#9608;&#9608;&#9608;</span><span style="color:#89b4fa">&#9608;&#9608;&#9608;</span><span style="color:#cba6f7">&#9608;&#9608;&#9608;</span><span style="color:#94e2d5">&#9608;&#9608;&#9608;</span><span style="color:#bac2de">&#9608;&#9608;&#9608;</span></div>
+                            <div class="nf-colors"><span style="color:#585b70">&#9608;&#9608;&#9608;</span><span style="color:#eba0ac">&#9608;&#9608;&#9608;</span><span style="color:#a6e3a1">&#9608;&#9608;&#9608;</span><span style="color:#f9e2af">&#9608;&#9608;&#9608;</span><span style="color:#89dceb">&#9608;&#9608;&#9608;</span><span style="color:#b4befe">&#9608;&#9608;&#9608;</span><span style="color:#94e2d5">&#9608;&#9608;&#9608;</span><span style="color:#cdd6f4">&#9608;&#9608;&#9608;</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="pane-zsh">
+                    <div class="prompt">
+                        <span class="p-u">sudeep</span><span class="p-at">@</span><span class="p-h">arch</span> <span class="p-d">~</span> <span class="p-s">$</span> <span class="cursor"></span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Loading Skeleton -->
-        <div
-            class="skeleton-container fixed inset-0 z-20 flex items-center justify-center px-4"
-        >
-            <div class="max-w-6xl mx-auto w-full">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Left Skeleton -->
-                    <div class="text-center lg:text-left">
-                        <!-- Profile Picture Skeleton -->
-                        <div class="mb-8 lg:hidden">
-                            <div class="relative inline-block">
-                                <div
-                                    class="w-32 h-32 rounded-full mx-auto skeleton"
-                                ></div>
-                            </div>
-                        </div>
-
-                        <!-- Name and Title Skeleton -->
-                        <div class="mb-8">
-                            <div
-                                class="h-12 w-3/4 mx-auto lg:mx-0 skeleton rounded-lg mb-4"
-                            ></div>
-                            <div
-                                class="flex items-center justify-center lg:justify-start mb-4"
-                            >
-                                <div class="w-12 h-0.5 skeleton mr-4"></div>
-                                <div
-                                    class="h-6 w-1/3 skeleton rounded-lg"
-                                ></div>
-                                <div class="w-12 h-0.5 skeleton ml-4"></div>
-                            </div>
-                            <div class="space-y-2">
-                                <div
-                                    class="h-4 w-full mx-auto lg:mx-0 skeleton rounded"
-                                ></div>
-                                <div
-                                    class="h-4 w-5/6 mx-auto lg:mx-0 skeleton rounded"
-                                ></div>
-                            </div>
-                        </div>
-
-                        <!-- Skills Skeleton -->
-                        <div class="mb-8">
-                            <div
-                                class="flex flex-wrap gap-3 justify-center lg:justify-start"
-                            >
-                                <div
-                                    class="h-8 w-24 skeleton rounded-full"
-                                ></div>
-                                <div
-                                    class="h-8 w-20 skeleton rounded-full"
-                                ></div>
-                                <div
-                                    class="h-8 w-16 skeleton rounded-full"
-                                ></div>
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons Skeleton -->
-                        <div
-                            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-                        >
-                            <div class="h-12 w-48 skeleton rounded-lg"></div>
-                            <div class="h-12 w-48 skeleton rounded-lg"></div>
-                        </div>
+        <!-- ===== Editor (top-right) ===== -->
+        <div class="hypr-win" id="win-editor">
+            <div class="win-tabs">
+                <span class="tab active" data-target="pane-code">portfolio.ts<span class="tab-close">&times;</span></span>
+                <span class="tab" data-target="pane-conf">hyprland.conf<span class="tab-close">&times;</span></span>
+            </div>
+            <div class="win-content">
+                <div class="tab-pane active" id="pane-code">
+                    <div class="ed">
+                        <div><span class="ln">1</span><span class="kw">const</span> <span class="prop">developer</span> <span class="punc">=</span> <span class="punc">{</span></div>
+                        <div><span class="ln">2</span>  <span class="prop">name</span><span class="punc">:</span> <span class="str">'Sudeep Bogati'</span><span class="punc">,</span></div>
+                        <div><span class="ln">3</span>  <span class="prop">role</span><span class="punc">:</span> <span class="str">'Software Engineer'</span><span class="punc">,</span></div>
+                        <div><span class="ln">4</span>  <span class="prop">experience</span><span class="punc">:</span> <span class="str">'3+ years'</span><span class="punc">,</span></div>
+                        <div><span class="ln">5</span>  <span class="prop">skills</span><span class="punc">:</span> <span class="punc">[</span><span class="str">'TypeScript'</span><span class="punc">,</span> <span class="str">'Python'</span><span class="punc">,</span> <span class="str">'C#'</span><span class="punc">],</span></div>
+                        <div><span class="ln">6</span>  <span class="prop">site</span><span class="punc">:</span> <span class="str">'sudipbogati.com.np'</span><span class="punc">,</span></div>
+                        <div><span class="ln">7</span>  <span class="prop">passion</span><span class="punc">:</span> <span class="str">'Building solutions'</span></div>
+                        <div><span class="ln">8</span><span class="punc">};</span></div>
+                        <div><span class="ln">9</span></div>
+                        <div><span class="ln">10</span><span class="cmt">// i use arch btw</span></div>
                     </div>
-
-                    <!-- Right Skeleton (Desktop) -->
-                    <div class="hidden lg:block">
-                        <div class="relative">
-                            <!-- Profile Picture Skeleton -->
-                            <div
-                                class="absolute top-8 right-8 w-48 h-48 rounded-full skeleton"
-                            ></div>
-                            <!-- Code Illustration Skeleton -->
-                            <div
-                                class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100"
-                            >
-                                <div class="space-y-4">
-                                    <div
-                                        class="flex items-center space-x-2 mb-6"
-                                    >
-                                        <div
-                                            class="w-3 h-3 skeleton rounded-full"
-                                        ></div>
-                                        <div
-                                            class="w-3 h-3 skeleton rounded-full"
-                                        ></div>
-                                        <div
-                                            class="w-3 h-3 skeleton rounded-full"
-                                        ></div>
-                                        <div
-                                            class="ml-4 h-4 w-24 skeleton rounded"
-                                        ></div>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div
-                                            class="h-4 w-full skeleton rounded"
-                                        ></div>
-                                        <div
-                                            class="h-4 w-5/6 skeleton rounded"
-                                        ></div>
-                                        <div
-                                            class="h-4 w-3/4 skeleton rounded"
-                                        ></div>
-                                        <div
-                                            class="h-4 w-4/5 skeleton rounded"
-                                        ></div>
-                                        <div
-                                            class="h-4 w-2/3 skeleton rounded"
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="vim-bar">
+                        <span><span class="vim-mode">NORMAL</span></span>
+                        <span>portfolio.ts &nbsp;10L &nbsp;utf-8 &nbsp;ts</span>
                     </div>
                 </div>
-
-                <!-- Stats Skeleton -->
-                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div
-                            class="h-8 w-16 mx-auto skeleton rounded mb-2"
-                        ></div>
-                        <div class="h-4 w-24 mx-auto skeleton rounded"></div>
+                <div class="tab-pane" id="pane-conf">
+                    <div class="ed">
+                        <div><span class="ln">1</span><span class="cmt"># ~/.config/hypr/hyprland.conf</span></div>
+                        <div><span class="ln">2</span></div>
+                        <div><span class="ln">3</span><span class="kw">general</span> <span class="punc">{</span></div>
+                        <div><span class="ln">4</span>  <span class="prop">gaps_in</span> <span class="punc">=</span> <span class="num">4</span></div>
+                        <div><span class="ln">5</span>  <span class="prop">gaps_out</span> <span class="punc">=</span> <span class="num">8</span></div>
+                        <div><span class="ln">6</span>  <span class="prop">border_size</span> <span class="punc">=</span> <span class="num">2</span></div>
+                        <div><span class="ln">7</span>  <span class="prop">col.active_border</span> <span class="punc">=</span> <span class="str">rgb(89b4fa)</span></div>
+                        <div><span class="ln">8</span>  <span class="prop">layout</span> <span class="punc">=</span> <span class="str">dwindle</span></div>
+                        <div><span class="ln">9</span><span class="punc">}</span></div>
+                        <div><span class="ln">10</span></div>
+                        <div><span class="ln">11</span><span class="kw">group</span> <span class="punc">{</span> <span class="cmt"># window grouping</span></div>
+                        <div><span class="ln">12</span>  <span class="kw">groupbar</span> <span class="punc">{</span></div>
+                        <div><span class="ln">13</span>    <span class="prop">enabled</span> <span class="punc">=</span> <span class="str">true</span></div>
+                        <div><span class="ln">14</span>    <span class="prop">font_size</span> <span class="punc">=</span> <span class="num">10</span></div>
+                        <div><span class="ln">15</span>    <span class="prop">col.active</span> <span class="punc">=</span> <span class="str">rgb(1e1e2e)</span></div>
+                        <div><span class="ln">16</span>  <span class="punc">}</span></div>
+                        <div><span class="ln">17</span><span class="punc">}</span></div>
+                        <div><span class="ln">18</span></div>
+                        <div><span class="ln">19</span><span class="kw">decoration</span> <span class="punc">{</span></div>
+                        <div><span class="ln">20</span>  <span class="prop">rounding</span> <span class="punc">=</span> <span class="num">12</span></div>
+                        <div><span class="ln">21</span>  <span class="kw">blur</span> <span class="punc">{</span></div>
+                        <div><span class="ln">22</span>    <span class="prop">enabled</span> <span class="punc">=</span> <span class="str">true</span></div>
+                        <div><span class="ln">23</span>    <span class="prop">size</span> <span class="punc">=</span> <span class="num">8</span></div>
+                        <div><span class="ln">24</span>    <span class="prop">passes</span> <span class="punc">=</span> <span class="num">2</span></div>
+                        <div><span class="ln">25</span>  <span class="punc">}</span></div>
+                        <div><span class="ln">26</span><span class="punc">}</span></div>
                     </div>
-                    <div class="text-center">
-                        <div
-                            class="h-8 w-16 mx-auto skeleton rounded mb-2"
-                        ></div>
-                        <div class="h-4 w-24 mx-auto skeleton rounded"></div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="h-8 w-16 mx-auto skeleton rounded mb-2"
-                        ></div>
-                        <div class="h-4 w-24 mx-auto skeleton rounded"></div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="h-8 w-16 mx-auto skeleton rounded mb-2"
-                        ></div>
-                        <div class="h-4 w-24 mx-auto skeleton rounded"></div>
+                    <div class="vim-bar">
+                        <span><span class="vim-mode">NORMAL</span></span>
+                        <span>hyprland.conf &nbsp;26L &nbsp;utf-8 &nbsp;hyprlang</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Hero Section -->
-        <section
-            class="relative z-10 min-h-screen flex items-center justify-center px-4 content-hidden"
-        >
-            <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Left Content -->
-                    <div class="text-center lg:text-left animate-fade-in">
-                        <!-- Profile Picture -->
-                        <div class="mb-8 lg:hidden">
-                            <div class="relative inline-block">
-                                <img
-                                    src="./images/profile.JPG"
-                                    alt="Sudip Bogati"
-                                    class="rounded-full mx-auto border-4 border-white shadow-2xl"
-                                />
-                                <div
-                                    class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/10 to-emerald-500/10"
-                                ></div>
-                                <!-- Status indicator -->
-                                <div
-                                    class="absolute bottom-2 right-2 w-6 h-6 bg-emerald-500 rounded-full border-4 border-white"
-                                ></div>
-                            </div>
-                        </div>
-
-                        <!-- Name and Title -->
-                        <div class="mb-8">
-                            <h1
-                                class="font-heading text-5xl lg:text-6xl font-bold mb-4 text-gray-900 leading-tight"
-                            >
-                                Sudeep <span class="text-sky-600">Bogati</span>
-                            </h1>
-                            <div
-                                class="flex items-center justify-center lg:justify-start mb-4"
-                            >
-                                <div
-                                    class="w-12 h-0.5 bg-emerald-500 mr-4"
-                                ></div>
-                                <h2
-                                    class="font-heading text-xl lg:text-2xl text-gray-600 font-semibold"
-                                >
-                                    Software Engineer
-                                </h2>
-                                <div
-                                    class="w-12 h-0.5 bg-emerald-500 ml-4"
-                                ></div>
-                            </div>
-                            <p
-                                class="font-body text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 leading-relaxed"
-                            >
-                                Passionate Software Engineer with
-                                <span class="font-semibold text-sky-600"
-                                    >1+ years</span
-                                >
-                                of experience crafting innovative digital
-                                solutions and building scalable web
-                                applications.
-                            </p>
-                        </div>
-
-                        <!-- Key Skills -->
-                        <div class="mb-8">
-                            <div
-                                class="flex flex-wrap gap-3 justify-center lg:justify-start"
-                            >
-                                <span
-                                    class="font-body bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200"
-                                >
-                                    Javascript
-                                </span>
-                                <span
-                                    class="font-body bg-sky-50 text-sky-700 px-4 py-2 rounded-full text-sm font-medium border border-sky-200"
-                                >
-                                    Python
-                                </span>
-                                <span
-                                    class="font-body bg-red-50 text-red-700 px-4 py-2 rounded-full text-sm font-medium border border-red-200"
-                                >
-                                    AI
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons -->
-                        <div
-                            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-                        >
-                            <a
-                                href="https://sudipbogati.com.np?ref=sudeep-is-a-dev"
-                                target="_blank"
-                                class="group font-body bg-sky-600 hover:bg-sky-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center"
-                            >
-                                <svg
-                                    class="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                    ></path>
-                                </svg>
-                                www.sudipbogati.com.np
-                            </a>
-                            <a
-                                href="mailto:hello@sudipbogati.com.np"
-                                class="group font-body border-2 border-emerald-600 hover:bg-emerald-600 hover:text-white text-emerald-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
-                            >
-                                <svg
-                                    class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                    ></path>
-                                </svg>
-                                Contact Me
-                            </a>
-                        </div>
+        <!-- ===== Contact (bottom-right) ===== -->
+        <div class="hypr-win" id="win-contact">
+            <div class="win-tabs">
+                <span class="tab active" data-target="pane-links">links<span class="tab-close">&times;</span></span>
+            </div>
+            <div class="win-content">
+                <div class="tab-pane active" id="pane-links">
+                    <div class="prompt">
+                        <span class="p-u">sudeep</span><span class="p-at">@</span><span class="p-h">arch</span> <span class="p-d">~</span> <span class="p-s">$</span> cat ~/.config/links.yml
                     </div>
-
-                    <!-- Right Illustration -->
-                    <div
-                        class="hidden lg:block animate-fade-in"
-                        style="animation-delay: 0.3s"
-                    >
-                        <div class="relative">
-                            <!-- Profile Picture for desktop -->
-                            <div
-                                class="absolute top-8 right-8 z-20 animate-float"
-                            >
-                                <div class="relative">
-                                    <img
-                                        src="./images/profile.jpg"
-                                        alt="Sudip Bogati"
-                                        class="w-48 h-48 rounded-full border-4 border-white shadow-2xl"
-                                    />
-                                    <div
-                                        class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/10 to-emerald-500/10"
-                                    ></div>
-                                    <!-- Status indicator -->
-                                    <div
-                                        class="absolute bottom-4 right-4 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white animate-pulse"
-                                    ></div>
-                                </div>
-                            </div>
-
-                            <!-- Code illustration -->
-                            <div
-                                class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 animate-float"
-                            >
-                                <div class="space-y-4">
-                                    <!-- Code editor header -->
-                                    <div
-                                        class="flex items-center space-x-2 mb-6"
-                                    >
-                                        <div
-                                            class="w-3 h-3 bg-red-400 rounded-full"
-                                        ></div>
-                                        <div
-                                            class="w-3 h-3 bg-yellow-400 rounded-full"
-                                        ></div>
-                                        <div
-                                            class="w-3 h-3 bg-emerald-400 rounded-full"
-                                        ></div>
-                                        <div
-                                            class="ml-4 text-sm text-gray-500 font-mono"
-                                        >
-                                            portfolio.js
-                                        </div>
-                                    </div>
-
-                                    <!-- Code lines -->
-                                    <div class="space-y-3 font-mono text-sm">
-                                        <div class="flex">
-                                            <span class="text-gray-400 w-8"
-                                                >1</span
-                                            >
-                                            <span class="text-sky-600"
-                                                >const</span
-                                            >
-                                            <span class="text-gray-800 ml-2"
-                                                >developer = {</span
-                                            >
-                                        </div>
-                                        <div class="flex">
-                                            <span class="text-gray-400 w-8"
-                                                >2</span
-                                            >
-                                            <span class="text-emerald-600 ml-4"
-                                                >name:</span
-                                            >
-                                            <span class="text-sky-600 ml-2"
-                                                >'Sudip Bogati',</span
-                                            >
-                                        </div>
-                                        <div class="flex">
-                                            <span class="text-gray-400 w-8"
-                                                >3</span
-                                            >
-                                            <span class="text-emerald-600 ml-4"
-                                                >role:</span
-                                            >
-                                            <span class="text-sky-600 ml-2"
-                                                >'Software Engineer',</span
-                                            >
-                                        </div>
-                                        <div class="flex">
-                                            <span class="text-gray-400 w-8"
-                                                >4</span
-                                            >
-                                            <span class="text-emerald-600 ml-4"
-                                                >experience:</span
-                                            >
-                                            <span class="text-orange-600 ml-2"
-                                                >'1+ years',</span
-                                            >
-                                        </div>
-                                        <div class="flex">
-                                            <span class="text-gray-400 w-8"
-                                                >5</span
-                                            >
-                                            <span class="text-emerald-600 ml-4"
-                                                >passion:</span
-                                            >
-                                            <span class="text-sky-600 ml-2"
-                                                >'Building solutions'</span
-                                            >
-                                        </div>
-                                        <div class="flex">
-                                            <span class="text-gray-400 w-8"
-                                                >6</span
-                                            >
-                                            <span class="text-gray-800"
-                                                >};</span
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating tech icons -->
-                            <div
-                                class="absolute -top-4 -left-4 bg-sky-500 text-white p-3 rounded-lg shadow-lg animate-float"
-                                style="animation-delay: 1s"
-                            >
-                                <svg
-                                    class="w-6 h-6"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"
-                                    />
-                                </svg>
-                            </div>
-
-                            <div
-                                class="absolute -bottom-4 -right-4 bg-emerald-500 text-white p-3 rounded-lg shadow-lg animate-float"
-                                style="animation-delay: 2s"
-                            >
-                                <svg
-                                    class="w-6 h-6"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                                    />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Section -->
-                <div
-                    class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in"
-                    style="animation-delay: 0.6s"
-                >
-                    <div class="text-center">
-                        <div
-                            class="font-heading text-3xl font-bold text-sky-600 mb-2"
-                        >
-                            1+
-                        </div>
-                        <div class="font-body text-gray-600 text-sm">
-                            Years Experience
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="font-heading text-3xl font-bold text-emerald-600 mb-2"
-                        >
-                            10+
-                        </div>
-                        <div class="font-body text-gray-600 text-sm">
-                            Projects Built
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="font-heading text-3xl font-bold text-sky-600 mb-2"
-                        >
-                            15+
-                        </div>
-                        <div class="font-body text-gray-600 text-sm">
-                            Technologies
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div
-                            class="font-heading text-3xl font-bold text-emerald-600 mb-2"
-                        >
-                            24/7
-                        </div>
-                        <div class="font-body text-gray-600 text-sm">
-                            Learning Mode
-                        </div>
-                    </div>
+                    <br>
+                    <div class="ct-line"><span class="ct-k">portfolio:</span> <a href="https://sudipbogati.com.np?ref=sudeep-is-a-dev" target="_blank" rel="noopener" class="ct-v">sudipbogati.com.np</a></div>
+                    <div class="ct-line"><span class="ct-k">email:</span> <a href="mailto:hello@sudipbogati.com.np" class="ct-v">hello@sudipbogati.com.np</a></div>
+                    <div class="ct-line"><span class="ct-k">github:</span> <a href="https://github.com/sudeepbogati7" target="_blank" rel="noopener" class="ct-v">github.com/sudeepbogati7</a></div>
+                    <a href="https://sudipbogati.com.np?ref=sudeep-is-a-dev" target="_blank" rel="noopener" class="ct-btn">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        sudipbogati.com.np
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <script>
-            // Handle loading skeleton and content display
-            window.addEventListener("load", function () {
-                const skeletonContainer = document.querySelector(
-                    ".skeleton-container",
-                );
-                const contentSection = document.querySelector("section");
+    <!-- Mako notification -->
+    <div id="notif">
+        <div class="notif-head"><span>mako</span><span>just now</span></div>
+        <div class="notif-title">sudeep.is-a.dev</div>
+        <div class="notif-body">Software Engineer &mdash; 3+ years<br>TypeScript &middot; Python &middot; C#<br><a href="https://sudipbogati.com.np?ref=sudeep-is-a-dev" target="_blank" rel="noopener">sudipbogati.com.np</a></div>
+    </div>
 
-                // Simulate loading delay (adjust or remove for actual content loading)
-                setTimeout(() => {
-                    // Fade out skeleton
-                    skeletonContainer.classList.add("skeleton-hidden");
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+    (function() {
+        'use strict';
 
-                    // Show content
-                    contentSection.classList.remove("content-hidden");
+        /* ===== Position windows: term left, editor top-right, contact bottom-right ===== */
+        (function() {
+            if (window.innerWidth <= 900) return;
+            var vw = window.innerWidth, vh = window.innerHeight;
+            var bar = 44, pad = 10, gap = 20;
 
-                    // Trigger fade-in animations for content
-                    const elements =
-                        document.querySelectorAll(".animate-fade-in");
-                    elements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.style.opacity = "1";
-                            el.style.transform = "translateY(0)";
-                        }, index * 200);
-                    });
+            var term = document.getElementById('win-term');
+            var editor = document.getElementById('win-editor');
+            var contact = document.getElementById('win-contact');
 
-                    // Clean up skeleton after transition
-                    setTimeout(() => {
-                        skeletonContainer.style.display = "none";
-                    }, 500);
-                }, 1500); // Adjust delay as needed
+            var tw = term.offsetWidth, th = term.offsetHeight;
+            var ew = editor.offsetWidth, eh = editor.offsetHeight;
+            var cw = contact.offsetWidth, ch = contact.offsetHeight;
+
+            /* Right column: editor stacked above contact */
+            var rightW = Math.max(ew, cw);
+            var rightH = eh + gap + ch;
+
+            /* Total cluster dimensions */
+            var clusterW = tw + gap + rightW;
+            var clusterH = Math.max(th, rightH);
+
+            /* Center the cluster on screen */
+            var startX = Math.max(pad, Math.round((vw - clusterW) / 2));
+            var startY = Math.max(bar + pad, Math.round((vh - clusterH) / 2));
+
+            /* Terminal: left column, vertically centered within cluster */
+            term.style.left = startX + 'px';
+            term.style.top  = (startY + Math.round((clusterH - th) / 2)) + 'px';
+
+            /* Editor: right column, top */
+            var rightX = startX + tw + gap;
+            editor.style.left = rightX + 'px';
+            editor.style.top  = (startY + Math.round((clusterH - rightH) / 2)) + 'px';
+
+            /* Contact: right column, below editor */
+            contact.style.left = rightX + 'px';
+            contact.style.top  = (startY + Math.round((clusterH - rightH) / 2) + eh + gap) + 'px';
+        })();
+
+        /* ===== Clock ===== */
+        function tick() {
+            var d = new Date();
+            var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            var t = document.getElementById('wb-time');
+            var dt = document.getElementById('wb-date');
+            if (t) t.textContent = d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+            if (dt) dt.textContent = days[d.getDay()] + ' ' + months[d.getMonth()] + ' ' + d.getDate();
+        }
+        tick();
+        setInterval(tick, 15000);
+
+        /* ===== Tab switching ===== */
+        document.querySelectorAll('.tab[data-target]').forEach(function(tab) {
+            tab.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var win = this.closest('.hypr-win');
+                win.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+                win.querySelectorAll('.tab-pane').forEach(function(p) { p.classList.remove('active'); });
+                this.classList.add('active');
+                var pane = document.getElementById(this.dataset.target);
+                if (pane) pane.classList.add('active');
             });
+        });
 
-            // Add hover effects to floating elements
-            document.querySelectorAll(".animate-float").forEach((el) => {
-                el.addEventListener("mouseenter", function () {
-                    this.style.animationPlayState = "paused";
-                    this.style.transform = "translateY(-25px) scale(1.05)";
+        /* ===== Window focus + z-index ===== */
+        var zTop = 53;
+        document.querySelectorAll('.hypr-win').forEach(function(win) {
+            win.addEventListener('mousedown', function() {
+                document.querySelectorAll('.hypr-win').forEach(function(w) { w.classList.remove('focused'); });
+                this.classList.add('focused');
+                this.style.zIndex = ++zTop;
+                var activeTab = this.querySelector('.tab.active');
+                var titleEl = document.getElementById('wb-title');
+                if (activeTab && titleEl) {
+                    titleEl.textContent = activeTab.textContent.replace('\u00d7','').trim();
+                }
+            });
+        });
+
+        /* ===== Drag all windows by tab bar ===== */
+        (function() {
+            var drag = { win: null, bar: null, ox: 0, oy: 0, sx: 0, sy: 0, moved: false };
+
+            document.querySelectorAll('.hypr-win .win-tabs').forEach(function(tb) {
+                tb.addEventListener('mousedown', function(e) {
+                    var w = this.closest('.hypr-win');
+                    var rect = w.getBoundingClientRect();
+                    drag.win = w; drag.bar = this;
+                    drag.sx = e.clientX; drag.sy = e.clientY;
+                    drag.ox = e.clientX - rect.left;
+                    drag.oy = e.clientY - rect.top;
+                    drag.moved = false;
                 });
 
-                el.addEventListener("mouseleave", function () {
-                    this.style.animationPlayState = "running";
-                    this.style.transform = "";
-                });
+                tb.addEventListener('touchstart', function(e) {
+                    var t = e.touches[0];
+                    var w = this.closest('.hypr-win');
+                    var rect = w.getBoundingClientRect();
+                    drag.win = w; drag.bar = this;
+                    drag.ox = t.clientX - rect.left;
+                    drag.oy = t.clientY - rect.top;
+                    drag.moved = false;
+                }, { passive: true });
+
+                /* Block tab switch after drag */
+                tb.addEventListener('click', function(e) {
+                    if (drag.moved) { e.stopImmediatePropagation(); drag.moved = false; }
+                }, true);
             });
-        </script>
-    </body>
+
+            document.addEventListener('mousemove', function(e) {
+                if (!drag.win) return;
+                if (!drag.moved && Math.abs(e.clientX - drag.sx) + Math.abs(e.clientY - drag.sy) < 4) return;
+                drag.moved = true;
+                drag.bar.classList.add('dragging');
+                drag.win.style.left = Math.max(0, e.clientX - drag.ox) + 'px';
+                drag.win.style.top  = Math.max(0, e.clientY - drag.oy) + 'px';
+                e.preventDefault();
+            });
+
+            document.addEventListener('touchmove', function(e) {
+                if (!drag.win) return;
+                drag.moved = true;
+                var t = e.touches[0];
+                drag.win.style.left = Math.max(0, t.clientX - drag.ox) + 'px';
+                drag.win.style.top  = Math.max(0, t.clientY - drag.oy) + 'px';
+            }, { passive: true });
+
+            function endDrag() {
+                if (drag.bar) drag.bar.classList.remove('dragging');
+                drag.win = null; drag.bar = null;
+            }
+            document.addEventListener('mouseup', endDrag);
+            document.addEventListener('touchend', endDrag);
+        })();
+
+        /* ===== Notification dismiss ===== */
+        var notifEl = document.getElementById('notif');
+        if (notifEl) {
+            notifEl.addEventListener('click', function() {
+                if (typeof gsap !== 'undefined') {
+                    gsap.to(this, { x: 30, opacity: 0, duration: 0.25, onComplete: function() { notifEl.style.display = 'none'; } });
+                } else {
+                    this.style.display = 'none';
+                }
+            });
+        }
+
+        /* ===== Boot + Animations ===== */
+        if (typeof gsap !== 'undefined') {
+            var bootLines = document.querySelectorAll('.boot-line');
+            var tl = gsap.timeline();
+
+            bootLines.forEach(function(line, i) {
+                tl.to(line, { opacity: 1, duration: 0.01 }, 0.3 + i * 0.18);
+            });
+
+            tl.to('#boot', { delay: 0.35, scaleY: 0.003, duration: 0.25, ease: 'power4.in' })
+              .to('#boot', { opacity: 0, scaleX: 0.5, duration: 0.12 })
+              .set('#boot', { display: 'none' })
+
+              /* Desktop assembly */
+              .to('#waybar', { opacity: 1, duration: 0.3 })
+              .to('#desktop', { opacity: 1, duration: 0.1 })
+              .from('#win-term',    { scale: 0.92, opacity: 0, duration: 0.4, ease: 'back.out(1.3)', clearProps: 'transform,opacity' }, '-=0.05')
+              .from('#win-editor',  { scale: 0.92, opacity: 0, duration: 0.4, ease: 'back.out(1.3)', clearProps: 'transform,opacity' }, '-=0.2')
+              .from('#win-contact', { scale: 0.92, opacity: 0, duration: 0.4, ease: 'back.out(1.3)', clearProps: 'transform,opacity' }, '-=0.2')
+
+              /* Notification slides in */
+              .to('#notif', { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out' }, '+=1.2')
+              .to('#notif', { opacity: 0, x: 20, duration: 0.3, ease: 'power2.in' }, '+=5');
+        } else {
+            document.getElementById('boot').style.display = 'none';
+            document.getElementById('waybar').style.opacity = '1';
+            document.getElementById('desktop').style.opacity = '1';
+        }
+    })();
+    </script>
+</body>
 </html>
