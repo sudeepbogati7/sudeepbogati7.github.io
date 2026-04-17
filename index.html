@@ -295,9 +295,26 @@
             .nf-bottom { justify-content: center; }
         }
 
+        @media (max-width: 600px) {
+            #waybar { padding: 0 8px; }
+            .wb-sep { margin: 0 4px; }
+            .wb-left { gap: 2px; }
+        }
+
         @media (max-width: 480px) {
-            .wb-clock { gap: 6px; }
+            #waybar { font-size: 10px; }
+            .wb-clock { gap: 6px; font-size: 10px; flex-wrap: nowrap; white-space: nowrap; }
             .win-content { padding: 10px; }
+            .wp { padding: 2px 5px; font-size: 9px; }
+            .wb-arch { font-size: 11px; margin-right: 4px; }
+            .wb-left .wp:nth-child(n+5) { display: none; }
+            .wb-power { font-size: 12px; }
+        }
+
+        @media (max-width: 380px) {
+            #wb-date { display: none; }
+            .wb-left .wp:nth-child(n+4) { display: none; }
+            .wb-arch { margin-right: 2px; }
         }
 
         ::selection { background: var(--surface1); color: var(--text); }
